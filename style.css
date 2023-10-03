@@ -1,0 +1,195 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.main{
+    width: 100%;
+    height: 2800px;
+
+}
+.navbar img{
+    height: 66px;
+    width: 155px;
+}
+.pp-hamburger-icon img{
+    width: 28px;
+    height: 23px;
+}
+#but{
+    padding: 0;
+    border: none;
+    background: none;
+    color: white;
+}
+.banner{
+    height: 457px;
+}
+.banner button{
+    position: absolute;
+    left: 14%;
+    bottom: 150px;
+    font-size: 1.125rem;
+    letter-spacing: -.27px;
+    color: #fff;
+    background-color: #6739b7;
+    text-align: center;
+    width: 156px;
+    height: 45px;
+    margin: 0 auto;
+    min-width: max-content;
+    padding: 0 16px;
+    border-radius: 33px;
+    border: none;
+    display: block;
+}
+.content .lrheading{
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 1.12;
+    letter-spacing: -.57px;
+    color: #361374;
+    font-family: sans-serif,Helvetica,Arial;
+}
+.content .smheading{
+    display: block;
+    text-align: center;
+    font-size: 1.875rem;
+    font-weight: 500;
+    line-height: 1.47;
+    letter-spacing: -.57px;
+    margin-bottom: 0;
+    color: #361374;
+}
+.content .lritem h2{
+    font-size: 1.375rem;
+    font-weight: 400;
+    line-height: 4.5;
+    letter-spacing: -.33px;
+    color: #323232;
+}
+.content .smitem h2{
+    font-size: 1.25rem;
+    line-height: 1.6;
+    word-spacing: 1px;
+}
+.content .lritem p{
+    font-size: .875rem;
+    font-weight: 300;
+    width: 70%;
+    line-height: 1.4;
+    letter-spacing: 0;
+    color: #232028;
+    opacity: .7;
+}
+.content .smitem p{
+    font-size: .875rem;
+    font-weight: 300;
+    line-height: 1.86;
+    letter-spacing: 0;
+    color: #232028;
+    opacity: .7;
+}
+.gradiant{
+    width: 100%;
+    height: 860px;
+    background: linear-gradient(#ddd8fa,#fff);
+    text-align: center;
+    padding-top: 200px;
+    margin-bottom: 100px
+}
+.secure{
+    width: 100%;
+    height: 332px;
+    padding: 22px;
+    background: #967edd;
+    color: #fff;
+    background-image: url(https://www.phonepe.com/webstatic/static/trust-banner-29acd6391200d69ad22567eb1a15a10b.png);
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right 38px top -4px;
+    border-radius: 32px;
+    transform: translateY(138px);
+}
+.secure img{
+    height: 200px;
+    width: 200px;
+}
+.lrmoney h2{
+    /* text-shadow: 0 2px 4px; */
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 2.4;
+    margin-bottom: 8px;
+}
+.lrmoney p{
+    font-size: 1.25rem;
+    line-height: 1.7;
+    width: 55%;
+    margin-bottom: 1rem;
+}
+.smmoney h2{
+    font-size: 1.75rem;
+    line-height: 2.11;
+    margin-bottom: 2px;
+    margin-top: 7px;
+    font-weight: 700;
+}
+.lrcrore h2{
+    font-size: 2.625rem;
+    font-weight: 501;
+    line-height: 1.4;
+    letter-spacing: -.63px;
+    color: #361968;
+}
+.smcrore h2{
+    font-size: 2rem;
+    font-weight: 501;
+    line-height: 1.34;
+    letter-spacing: -.11px;
+    color: #361968;
+}
+.partner button{
+    font-size: 1.125rem;
+    letter-spacing: -.27px;
+    color: #fff;
+    background-color: #07c3de;
+    text-align: center;
+    width: 156px;
+    height: 45px;
+    margin: 0 auto;
+    min-width: max-content;
+    padding: 0 16px;
+    border-radius: 33px;
+    border: none;
+    display: block;
+}
+.partner button .arrow{
+    margin-left: 8px;
+    font-size: 1rem;
+    position: relative;
+    transition: all .2s ease 0s;
+    left: 0;
+}
+.lrstats .lite{
+    font-size: 1.25rem;
+    font-weight: lighter;
+    color: #dcd3ff;
+    line-height: 1.6
+}
+.lrstats .bold{
+    font-size: 2.5rem;
+    font-weight: 501;
+    color: #fff;
+}
+.smstats .lite{
+    font-size: 1.25rem;
+    font-weight: lighter;
+    color: #dcd3ff;
+    line-height: 1.6
+}
+.smstats .bold{
+    font-size: 2.5rem;
+    font-weight: 501;
+    color: #fff;
+}

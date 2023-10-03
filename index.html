@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>phonepe: UPI Payments</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="main">
+     <nav class="navbar navbar-expand-lg bg-body-white">
+        <div class="container-fluid px-lg-5 px-3">
+          <a class="navbar-brand" href="#">
+            <img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8yIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjAiIHk9IjAiIHZpZXdCb3g9IjAgMCAxMzIgNDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxzdHlsZT4uc3Qwe2ZpbGw6IzVmMjU5Zn08L3N0eWxlPjxjaXJjbGUgdHJhbnNmb3JtPSJyb3RhdGUoLTc2LjcxNCAxNy44NyAyNC4wMDEpIiBjbGFzcz0ic3QwIiBjeD0iMTcuOSIgY3k9IjI0IiByPSIxNy45Ii8+PHBhdGggY2xhc3M9InN0MCIgZD0iTTkwLjUgMzQuMnYtNi41YzAtMS42LS42LTIuNC0yLjEtMi40LS42IDAtMS4zLjEtMS43LjJWMzVjMCAuMy0uMy42LS42LjZoLTIuM2MtLjMgMC0uNi0uMy0uNi0uNlYyMy45YzAtLjQuMy0uNy42LS44IDEuNS0uNSAzLS44IDQuNi0uOCAzLjYgMCA1LjYgMS45IDUuNiA1LjR2Ny40YzAgLjMtLjMuNi0uNi42SDkyYy0uOSAwLTEuNS0uNy0xLjUtMS41em05LTMuOWwtLjEuOWMwIDEuMi44IDEuOSAyLjEgMS45IDEgMCAxLjktLjMgMi45LS44LjEgMCAuMi0uMS4zLS4xLjIgMCAuMy4xLjQuMi4xLjEuMy40LjMuNC4yLjMuNC43LjQgMSAwIC41LS4zIDEtLjcgMS4yLTEuMS42LTIuNC45LTMuOC45LTEuNiAwLTIuOS0uNC0zLjktMS4yLTEtLjktMS42LTIuMS0xLjYtMy42di0zLjljMC0zLjEgMi01IDUuNC01IDMuMyAwIDUuMiAxLjggNS4yIDV2Mi40YzAgLjMtLjMuNi0uNi42aC02LjN6bS0uMS0yLjJIMTAzLjJ2LTFjMC0xLjItLjctMi0xLjktMnMtMS45LjctMS45IDJ2MXptMjUuNSAyLjJsLS4xLjljMCAxLjIuOCAxLjkgMi4xIDEuOSAxIDAgMS45LS4zIDIuOS0uOC4xIDAgLjItLjEuMy0uMS4yIDAgLjMuMS40LjIuMS4xLjMuNC4zLjQuMi4zLjQuNy40IDEgMCAuNS0uMyAxLS43IDEuMi0xLjEuNi0yLjQuOS0zLjguOS0xLjYgMC0yLjktLjQtMy45LTEuMi0xLS45LTEuNi0yLjEtMS42LTMuNnYtMy45YzAtMy4xIDItNSA1LjQtNSAzLjMgMCA1LjIgMS44IDUuMiA1djIuNGMwIC4zLS4zLjYtLjYuNmgtNi4zem0tLjEtMi4ySDEyOC42di0xYzAtMS4yLS43LTItMS45LTJzLTEuOS43LTEuOSAydjF6TTY2IDM1LjdoMS40Yy4zIDAgLjYtLjMuNi0uNnYtNy40YzAtMy40LTEuOC01LjQtNC44LTUuNC0uOSAwLTEuOS4yLTIuNS40VjE5YzAtLjgtLjctMS41LTEuNS0xLjVoLTEuNGMtLjMgMC0uNi4zLS42LjZ2MTdjMCAuMy4zLjYuNi42aDIuM2MuMyAwIC42LS4zLjYtLjZ2LTkuNGMuNS0uMiAxLjItLjMgMS43LS4zIDEuNSAwIDIuMS43IDIuMSAyLjR2Ni41Yy4xLjcuNyAxLjQgMS41IDEuNHptMTUuMS04LjRWMzFjMCAzLjEtMi4xIDUtNS42IDUtMy40IDAtNS42LTEuOS01LjYtNXYtMy43YzAtMy4xIDIuMS01IDUuNi01IDMuNSAwIDUuNiAxLjkgNS42IDV6bS0zLjUgMGMwLTEuMi0uNy0yLTItMnMtMiAuNy0yIDJWMzFjMCAxLjIuNyAxLjkgMiAxLjlzMi0uNyAyLTEuOXYtMy43em0tMjIuMy0xLjdjMCAzLjItMi40IDUuNC01LjYgNS40LS44IDAtMS41LS4xLTIuMi0uNHY0LjVjMCAuMy0uMy42LS42LjZoLTIuM2MtLjMgMC0uNi0uMy0uNi0uNlYxOS4yYzAtLjQuMy0uNy42LS44IDEuNS0uNSAzLS44IDQuNi0uOCAzLjYgMCA2LjEgMi4yIDYuMSA1LjZ2Mi40ek01MS43IDIzYzAtMS42LTEuMS0yLjQtMi42LTIuNC0uOSAwLTEuNS4zLTEuNS4zdjYuNmMuNi4zLjkuNCAxLjYuNCAxLjUgMCAyLjYtLjkgMi42LTIuNFYyM3ptNjguMiAyLjZjMCAzLjItMi40IDUuNC01LjYgNS40LS44IDAtMS41LS4xLTIuMi0uNHY0LjVjMCAuMy0uMy42LS42LjZoLTIuM2MtLjMgMC0uNi0uMy0uNi0uNlYxOS4yYzAtLjQuMy0uNy42LS44IDEuNS0uNSAzLS44IDQuNi0uOCAzLjYgMCA2LjEgMi4yIDYuMSA1LjZ2Mi40em0tMy42LTIuNmMwLTEuNi0xLjEtMi40LTIuNi0yLjQtLjkgMC0xLjUuMy0xLjUuM3Y2LjZjLjYuMy45LjQgMS42LjQgMS41IDAgMi42LS45IDIuNi0yLjRWMjN6Ii8+PHBhdGggZD0iTTI2IDE5LjNjMC0uNy0uNi0xLjMtMS4zLTEuM2gtMi40bC01LjUtNi4zYy0uNS0uNi0xLjMtLjgtMi4xLS42bC0xLjkuNmMtLjMuMS0uNC41LS4yLjdsNiA1LjdIOS41Yy0uMyAwLS41LjItLjUuNXYxYzAgLjcuNiAxLjMgMS4zIDEuM2gxLjR2NC44YzAgMy42IDEuOSA1LjcgNS4xIDUuNyAxIDAgMS44LS4xIDIuOC0uNXYzLjJjMCAuOS43IDEuNiAxLjYgMS42aDEuNGMuMyAwIC42LS4zLjYtLjZWMjAuOGgyLjNjLjMgMCAuNS0uMi41LS41di0xem0tNi40IDguNmMtLjYuMy0xLjQuNC0yIC40LTEuNiAwLTIuNC0uOC0yLjQtMi42di00LjhoNC40djd6IiBmaWxsPSIjZmZmIi8+PC9zdmc+" alt="">
+          </a>
+          <button class="navbar-toggler" id="but" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="pp-hamburger-icon">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgiIGhlaWdodD0iMjMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgc3Ryb2tlPSIjNjYzQUI1IiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj48cGF0aCBkPSJNMS40MTQgMS4zNTNoMjQuODZNMS40MTQgMTEuMjI4aDI0Ljg2TTEuNDE0IDIxLjQ1N2gyNC44NiIvPjwvZz48L3N2Zz4=" alt="">
+            </span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
+              <a class="nav-link px-lg-5 text-dark" href="#">BUSINESS SOLUTIONS</a>
+              <a class="nav-link pe-lg-5 text-dark" href="#">PRESS</a>
+              <a class="nav-link pe-lg-5 text-dark" href="#">CAREERS</a>
+              <a class="nav-link pe-lg-5 text-dark" href="#">ABOUT US</a>
+              <a class="nav-link pe-lg-5 text-dark" href="#">BLOG</a>
+              <a class="nav-link pe-lg-5 text-dark" href="#">CONTACT US</a>
+              <a class="nav-link pe-lg-5 text-dark" href="#">TRUST & SAFETY</a>
+              <!-- <a class="nav-link disabled">Disabled</a> -->
+            </div>
+          </div>
+        </div><!-- container -->
+     </nav>
+      <div class="banner d-none d-sm-block" style="background-image: url(/banner-image.png);">
+        <button>Get the App</button>
+      </div>
+      <div class="banner d-block d-sm-none" style="background-image: url(/hp-mob-banner1.png);">
+        <!-- <button>Get the App</button> -->
+      </div>
+      <div class="d-none d-sm-block" style="height: 80px;">
+        <!-- space -->
+      </div>
+      <div class="d-block d-sm-none" style="height: 60px;">
+        <!-- space -->
+      </div>
+     <div class="container-fluid px-lg-5 px-4">
+      <div class="row">
+        <div class="bs col-lg-6 d-none d-sm-block" style="background-image: url(/insurence.jpg); background-repeat: no-repeat; height: 302px; width: 40%;">  
+        </div>
+        <div class="bs col-lg-6 d-none d-sm-block ms-auto" style="background-image: url(/investment.jpg); background-repeat: no-repeat; height: 302px; width: 40%;">  
+        </div>
+        <div class="ss col-lg-6 d-block d-sm-none" style="background-image: url(/insurence-small.jpg); background-repeat: no-repeat; height: 202px;">  
+        </div>
+        <div class="ss col-lg-6 d-block d-sm-none mt-5" style="background-image: url(/investment-small.jpg); background-repeat: no-repeat; height: 202px;">  
+        </div>
+      </div>
+      <div class="d-none d-sm-block" style="height: 80px;">
+        <!-- space -->
+      </div>
+      <div class="d-block d-sm-none" style="height: 60px;">
+        <!-- space -->
+      </div>
+      <div class="content row">
+        <div class="col-lg-6 d-none d-sm-block">
+        <h1 class="lrheading">Simple, Fast & Secure</h1>
+        <div class="lritem" style="height: 141.133px;">
+          <h2>One app for all things money.</h2>
+          <p>Pay bills, recharge, send money, buy gold, invest and shop at your favourite stores.</p>
+          <hr size="20" width="70%" color=""> 
+        </div>
+        <div class="lritem" style="height: 141.133px;">
+          <h2>Pay whenever you like, wherever you like.</h2>
+          <p>Choose from options like UPI, the PhonePe wallet or your Debit and Credit Card.</p>
+          <hr size="20" width="70%" color=""> 
+        </div>
+        <div class="lritem" style="height: 141.133px;">
+          <h2>Find all your favourite apps on PhonePe Switch.</h2>
+          <p>Book flights, order food or buy groceries. Use all your favourite apps without downloading them.</p>
+          <hr size="20" width="70%" color=""> 
+        </div>
+        </div><!-- col -->
+        <div class="col-lg-6 d-block d-sm-none">
+          <h1 class="smheading">Simple, Fast & Secure</h1>
+          <div class="smitem" style="height: 141.133px;">
+            <h2>One app for all things money.</h2>
+            <p>Pay bills, recharge, send money, buy gold, invest and shop at your favourite stores.</p>
+            <hr size="20" width="70%" color=""> 
+          </div>
+          <div class="smitem" style="height: 141.133px;">
+            <h2>Pay whenever you like, wherever you like.</h2>
+            <p>Choose from options like UPI, the PhonePe wallet or your Debit and Credit Card.</p>
+            <hr size="20" width="70%" color=""> 
+          </div>
+          <div class="smitem" style="height: 141.133px;">
+            <h2>Find all your favourite apps on PhonePe Switch.</h2>
+            <p>Book flights, order food or buy groceries. Use all your favourite apps without downloading them.</p>
+            <hr size="20" width="70%" color=""> 
+          </div>
+          </div><!-- col -->
+        <div class="col-lg-6">
+          <div class="ratio ratio-1x1">
+            <video autoplay="" loop="" muted="" poster="https://www.phonepe.com/webstatic/static/fast-secure-video-poster-v3-94aa47e32fec4824367389fc6b2fc255.png" playsinline="">
+            <source src="https://website.phonepe.com/assets/page/home-fast-secure-v3.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div><!-- col -->
+        <div class="secure col-lg-12 d-flex flex-lg-row flex-column align-items-center text-center text-lg-start">
+          <div class="widget col-4 col-lg-2">
+            <img src="secure widget.png" class="img-fluid ms-lg-5" alt="" style="height: auto;">
+          </div>
+          <div class="d-none d-sm-block col-lg-2 align-self-start align-self-lg-center">
+            <!-- gap -->
+          </div>
+          <div class="lrmoney d-none d-sm-block">
+            <h2>Your money stays safe.</h2>
+            <p>PhonePe protects your money with the best-in-class security systems that help minimize frauds.</p>
+          </div>
+          <div class="smmoney col-12 d-block d-sm-none">
+            <h2>Your money stays safe.</h2>
+            <p>PhonePe protects your money with the best-in-class security systems that help minimize frauds.</p>
+          </div>
+        </div>
+      </div><!-- content row -->
+     </div><!-- container --> 
+     <div class="gradiant">
+      <div class="lrcrore d-none d-sm-block">
+        <h2>At ~3.5 Crore <br>
+          stores, apps, websites & more</h2>
+      </div>
+      <div class="smcrore d-block d-sm-none">
+        <h2>At ~3.5 Crore <br>
+          stores, apps, websites <br> & more</h2>
+      </div>
+      <div class="partner mt-5">
+        <button>Partner with us
+          <span class="arrow"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzMiIGhlaWdodD0iMTciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgc3Ryb2tlPSIjRkZGIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj48cGF0aCBkPSJNMS4wNTQgOC41SDMxIi8+PHBhdGggc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTI0IDFsOCA4LTggNyIvPjwvZz48L3N2Zz4="></span>
+        </button>
+      </div>
+      <div class="picture mt-5 d-none d-sm-block">
+        <img src="image.png" alt="">
+      </div>
+      <div class="picture mt-5 d-block d-sm-none">
+        <img src="picture.png" alt="">
+      </div>
+     </div><!-- row -->
+
+     <div class="content row container-fluid px-lg-5 px-3">
+      <div class="col-lg-6 d-none d-sm-block">
+      <h1 class="lrheading">For Business</h1>
+      <div class="lritem" style="height: 141.133px;">
+        <h2>One app for all things money.</h2>
+        <p>Pay bills, recharge, send money, buy gold, invest and shop at your favourite stores.</p>
+        <hr size="20" width="70%" color=""> 
+      </div>
+      <div class="lritem" style="height: 141.133px;">
+        <h2>Pay whenever you like, wherever you like.</h2>
+        <p>Choose from options like UPI, the PhonePe wallet or your Debit and Credit Card.</p>
+        <hr size="20" width="70%" color=""> 
+      </div>
+      <div class="lritem" style="height: 141.133px;">
+        <h2>Find all your favourite apps on PhonePe Switch.</h2>
+        <p>Book flights, order food or buy groceries. Use all your favourite apps without downloading them.</p>
+        <hr size="20" width="70%" color=""> 
+      </div>
+      </div><!-- col -->
+      <div class="col-lg-6 d-block d-sm-none">
+        <h1 class="smheading">Simple, Fast & Secure</h1>
+        <div class="smitem" style="height: 141.133px;">
+          <h2>One app for all things money.</h2>
+          <p>Pay bills, recharge, send money, buy gold, invest and shop at your favourite stores.</p>
+          <hr size="20" width="70%" color=""> 
+        </div>
+        <div class="smitem" style="height: 141.133px;">
+          <h2>Pay whenever you like, wherever you like.</h2>
+          <p>Choose from options like UPI, the PhonePe wallet or your Debit and Credit Card.</p>
+          <hr size="20" width="70%" color=""> 
+        </div>
+        <div class="smitem" style="height: 141.133px;">
+          <h2>Find all your favourite apps on PhonePe Switch.</h2>
+          <p>Book flights, order food or buy groceries. Use all your favourite apps without downloading them.</p>
+          <hr size="20" width="70%" color=""> 
+        </div>
+        </div><!-- col -->
+      <div class="col-lg-6">
+        <div class="ratio ratio-1x1">
+          <div class="sales col-lg-6">
+            <img src="https://www.phonepe.com/webstatic/static/d2320023026840075b88ac7032725234/4ea59/basket-mob.png" class="img-fluid" alt="" style="height: auto;">
+          </div>
+        </div>
+      </div><!-- col -->
+     </div><!-- content row -->
+     <div class="desktop d-none d-sm-block">
+     <div class="data row pt-5 ps-5" style="background-image: url(stats-desktop.png); height: 371px; width: 1361px;">
+      <div class="lrstats col-lg-4">
+        <span class="lite">Trusted by over</span>
+        <br>
+        <span class="bold">43.5 Crore</span>
+        <br>
+        <span class="lite">Registered Users</span>
+      </div>
+      <div class="lrstats col-lg-4">
+        <span class="lite">Accepted all over</span>
+        <br>
+        <span class="bold">India</span>
+      </div>
+      <div class="lrstats col-lg-4">
+        <span class="lite">Accepted at</span>
+        <br>
+        <span class="bold">~3.5 Crore</span>
+        <br>
+        <span class="lite">Stores</span>
+      </div>
+     </div>
+     </div>
+     <div class="mobile d-block d-sm-none">
+     <div class="data row pt-5 ps-5" style="background-image: url(stats-mobile.png); height: 800px;">
+      <div class="smstats">
+        <span class="lite">Trusted by over</span>
+        <br>
+        <span class="bold">43.5 Crore</span>
+        <br>
+        <span class="lite">Registered Users</span>
+      </div>
+      <div class="smstats">
+        <span class="lite">Accepted all over</span>
+        <br>
+        <span class="bold">India</span>
+      </div>
+      <div class="smstats">
+        <span class="lite">Trusted by over</span>
+        <br>
+        <span class="bold">43.5 Crore</span>
+        <br>
+        <span class="lite">Registered Users</span>
+      </div>
+     </div>
+     </div>
+     <div class="container">
+      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+        <div class="col-4 col-lg-2">
+          <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
+              <img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8yIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjAiIHk9IjAiIHZpZXdCb3g9IjAgMCAxMzIgNDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxzdHlsZT4uc3Qwe2ZpbGw6IzVmMjU5Zn08L3N0eWxlPjxjaXJjbGUgdHJhbnNmb3JtPSJyb3RhdGUoLTc2LjcxNCAxNy44NyAyNC4wMDEpIiBjbGFzcz0ic3QwIiBjeD0iMTcuOSIgY3k9IjI0IiByPSIxNy45Ii8+PHBhdGggY2xhc3M9InN0MCIgZD0iTTkwLjUgMzQuMnYtNi41YzAtMS42LS42LTIuNC0yLjEtMi40LS42IDAtMS4zLjEtMS43LjJWMzVjMCAuMy0uMy42LS42LjZoLTIuM2MtLjMgMC0uNi0uMy0uNi0uNlYyMy45YzAtLjQuMy0uNy42LS44IDEuNS0uNSAzLS44IDQuNi0uOCAzLjYgMCA1LjYgMS45IDUuNiA1LjR2Ny40YzAgLjMtLjMuNi0uNi42SDkyYy0uOSAwLTEuNS0uNy0xLjUtMS41em05LTMuOWwtLjEuOWMwIDEuMi44IDEuOSAyLjEgMS45IDEgMCAxLjktLjMgMi45LS44LjEgMCAuMi0uMS4zLS4xLjIgMCAuMy4xLjQuMi4xLjEuMy40LjMuNC4yLjMuNC43LjQgMSAwIC41LS4zIDEtLjcgMS4yLTEuMS42LTIuNC45LTMuOC45LTEuNiAwLTIuOS0uNC0zLjktMS4yLTEtLjktMS42LTIuMS0xLjYtMy42di0zLjljMC0zLjEgMi01IDUuNC01IDMuMyAwIDUuMiAxLjggNS4yIDV2Mi40YzAgLjMtLjMuNi0uNi42aC02LjN6bS0uMS0yLjJIMTAzLjJ2LTFjMC0xLjItLjctMi0xLjktMnMtMS45LjctMS45IDJ2MXptMjUuNSAyLjJsLS4xLjljMCAxLjIuOCAxLjkgMi4xIDEuOSAxIDAgMS45LS4zIDIuOS0uOC4xIDAgLjItLjEuMy0uMS4yIDAgLjMuMS40LjIuMS4xLjMuNC4zLjQuMi4zLjQuNy40IDEgMCAuNS0uMyAxLS43IDEuMi0xLjEuNi0yLjQuOS0zLjguOS0xLjYgMC0yLjktLjQtMy45LTEuMi0xLS45LTEuNi0yLjEtMS42LTMuNnYtMy45YzAtMy4xIDItNSA1LjQtNSAzLjMgMCA1LjIgMS44IDUuMiA1djIuNGMwIC4zLS4zLjYtLjYuNmgtNi4zem0tLjEtMi4ySDEyOC42di0xYzAtMS4yLS43LTItMS45LTJzLTEuOS43LTEuOSAydjF6TTY2IDM1LjdoMS40Yy4zIDAgLjYtLjMuNi0uNnYtNy40YzAtMy40LTEuOC01LjQtNC44LTUuNC0uOSAwLTEuOS4yLTIuNS40VjE5YzAtLjgtLjctMS41LTEuNS0xLjVoLTEuNGMtLjMgMC0uNi4zLS42LjZ2MTdjMCAuMy4zLjYuNi42aDIuM2MuMyAwIC42LS4zLjYtLjZ2LTkuNGMuNS0uMiAxLjItLjMgMS43LS4zIDEuNSAwIDIuMS43IDIuMSAyLjR2Ni41Yy4xLjcuNyAxLjQgMS41IDEuNHptMTUuMS04LjRWMzFjMCAzLjEtMi4xIDUtNS42IDUtMy40IDAtNS42LTEuOS01LjYtNXYtMy43YzAtMy4xIDIuMS01IDUuNi01IDMuNSAwIDUuNiAxLjkgNS42IDV6bS0zLjUgMGMwLTEuMi0uNy0yLTItMnMtMiAuNy0yIDJWMzFjMCAxLjIuNyAxLjkgMiAxLjlzMi0uNyAyLTEuOXYtMy43em0tMjIuMy0xLjdjMCAzLjItMi40IDUuNC01LjYgNS40LS44IDAtMS41LS4xLTIuMi0uNHY0LjVjMCAuMy0uMy42LS42LjZoLTIuM2MtLjMgMC0uNi0uMy0uNi0uNlYxOS4yYzAtLjQuMy0uNy42LS44IDEuNS0uNSAzLS44IDQuNi0uOCAzLjYgMCA2LjEgMi4yIDYuMSA1LjZ2Mi40ek01MS43IDIzYzAtMS42LTEuMS0yLjQtMi42LTIuNC0uOSAwLTEuNS4zLTEuNS4zdjYuNmMuNi4zLjkuNCAxLjYuNCAxLjUgMCAyLjYtLjkgMi42LTIuNFYyM3ptNjguMiAyLjZjMCAzLjItMi40IDUuNC01LjYgNS40LS44IDAtMS41LS4xLTIuMi0uNHY0LjVjMCAuMy0uMy42LS42LjZoLTIuM2MtLjMgMC0uNi0uMy0uNi0uNlYxOS4yYzAtLjQuMy0uNy42LS44IDEuNS0uNSAzLS44IDQuNi0uOCAzLjYgMCA2LjEgMi4yIDYuMSA1LjZ2Mi40em0tMy42LTIuNmMwLTEuNi0xLjEtMi40LTIuNi0yLjQtLjkgMC0xLjUuMy0xLjUuM3Y2LjZjLjYuMy45LjQgMS42LjQgMS41IDAgMi42LS45IDIuNi0yLjRWMjN6Ii8+PHBhdGggZD0iTTI2IDE5LjNjMC0uNy0uNi0xLjMtMS4zLTEuM2gtMi40bC01LjUtNi4zYy0uNS0uNi0xLjMtLjgtMi4xLS42bC0xLjkuNmMtLjMuMS0uNC41LS4yLjdsNiA1LjdIOS41Yy0uMyAwLS41LjItLjUuNXYxYzAgLjcuNiAxLjMgMS4zIDEuM2gxLjR2NC44YzAgMy42IDEuOSA1LjcgNS4xIDUuNyAxIDAgMS44LS4xIDIuOC0uNXYzLjJjMCAuOS43IDEuNiAxLjYgMS42aDEuNGMuMyAwIC42LS4zLjYtLjZWMjAuOGgyLjNjLjMgMCAuNS0uMi41LS41di0xem0tNi40IDguNmMtLjYuMy0xLjQuNC0yIC40LTEuNiAwLTIuNC0uOC0yLjQtMi42di00LjhoNC40djd6IiBmaWxsPSIjZmZmIi8+PC9zdmc+" class="img-fluid" style="height: auto;" alt="">
+          </a>
+          <div class="col-12 d-block d-sm-none mb-5">
+    
+          </div>
+        </div>
+    
+        <div class="col lg-2">
+    
+        </div>
+    
+        <div class="col-lg-2 col-6">
+          <h5>Section</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item lg-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+            <li class="nav-item lg-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+            <li class="nav-item lg-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+            <li class="nav-item lg-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+            <li class="nav-item lg-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+          </ul>
+        </div>
+    
+        <div class="col lg-2 col-6">
+          <h5>Section</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item lg-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+            <li class="nav-item lg-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+            <li class="nav-item lg-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+            <li class="nav-item lg-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+            <li class="nav-item lg-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+          </ul>
+        </div>
+        <div class="col-12 d-block d-sm-none mb-5">
+    
+        </div>
+        <div class="col lg-2 col-6">
+          <h5>Section</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item lg-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+            <li class="nav-item lg-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+            <li class="nav-item lg-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+            <li class="nav-item lg-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+            <li class="nav-item lg-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+    </div><!-- main --> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>
